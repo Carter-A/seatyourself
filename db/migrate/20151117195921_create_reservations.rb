@@ -4,6 +4,9 @@ class CreateReservations < ActiveRecord::Migration
       t.integer :party_size
       t.datetime :time
 
+      t.belongs_to :users
+      t.belongs_to :restaurants
+
       t.timestamps null: false
     end
   end

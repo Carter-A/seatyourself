@@ -1,3 +1,10 @@
 <% @restaurants.each do |restaurant| %>
-  <%= restaurant.name %>
+  <%= restaurant.name %> <%= restaurant.description %>
 <% end %>
+
+
+<!-- if current_user -->
+<%= link_to "New Restaurant", '/restaurants/new' %>
+<!-- else -->
+<%= link_to "Sign Up", '/users/new' %>
+<!-- please log in -->

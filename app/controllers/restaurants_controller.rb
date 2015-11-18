@@ -15,6 +15,11 @@ class RestaurantsController < ApplicationController
       render :new
     end
   end
+  def destroy
+    @restaurant = Restaurant.find(params[:id])
+    @restaurant.destroy
+    #add redirect here
+  end
 
   private
   def restaurant_params

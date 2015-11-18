@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   root 'restaurants#index'
 
-  resources :restaurants
+  
+  resources :restaurants do
+    resources :reservations
+  end
   resources :users, only: [:new, :create]
   resources :sessions
   # The priority is based upon order of creation: first created -> highest priority.

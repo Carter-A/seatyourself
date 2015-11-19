@@ -1,3 +1,9 @@
+<%= @restaurant.name%>
+<%= @restaurant.location%>
+<%= @restaurant.description%>
+<%= @restaurant.cuisine%>
+
+
 <%= form_for [@restaurant, @reservation] do |f| %>
   <%= f.label :party_size %>
   <%= f.number_field :party_size %>

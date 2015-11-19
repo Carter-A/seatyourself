@@ -8,9 +8,7 @@
 </head>
 <body>
 
-  <% if flash[:notice] %>
-    <div class="notice"> <%= flash[:notice] %> </div>
-  <% end %>
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -36,6 +34,9 @@
     </div><!-- /.navbar-collapse -->
   </div>
 </nav>
+<% if flash[:notice] %>
+  <div class="notice"> <%= flash[:notice] %> </div>
+<% end %>
 <%= yield %>
 
 </body>

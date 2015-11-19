@@ -1,11 +1,12 @@
-<% @restaurants.each do |restaurant| %>
-  <%= restaurant.name %> <%= restaurant.description %>
-<% end %>
 
-
-<!-- if current_user -->
-<%= link_to "New Restaurant", '/restaurants/new' %>
-<!-- else -->
-<%= link_to "Sign Up", '/users/new' %>
-<!-- please log in -->
-<%= link_to "Login", new_session_path%>
+<div class="container">
+  <div class="row">
+      <% @restaurants.each do |restaurant| %>
+        <%= link_to "/restaurants/#{restaurant.id}" do %>
+          <div class="col-sm-4">
+            <h2><%= restaurant.name %></h2> <p><%= restaurant.description %></p>
+          </div>
+        <% end %>
+      <% end %>
+  </div>
+</div>

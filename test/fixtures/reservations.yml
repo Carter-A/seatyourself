@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  party_size: 1
-  time: 2015-11-17 14:59:21
-
-two:
-  party_size: 1
-  time: 2015-11-17 14:59:21

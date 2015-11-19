@@ -1,0 +1,9 @@
+<%= @user.name%>
+<%= @user.email%>
+
+<% @user.reservations.each do |reservation|%>
+	<p>---------------------------</p>
+	<%= reservation.time %>
+	<%= reservation.party_size %>
+	
+<% end %>

@@ -1,15 +1,29 @@
-<%= @restaurant.name%>
-<%= @restaurant.location%>
-<%= @restaurant.description%>
-<%= @restaurant.cuisine%>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <%= form_for [@restaurant, @reservation] do |f| %>
+        <%= f.label :party_size %>
+        <%= f.number_field :party_size %>
+
+        <%= f.label :time %>
+        <%= f.number_field :time %>
+
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 
-<%= form_for [@restaurant, @reservation] do |f| %>
-  <%= f.label :party_size %>
-  <%= f.number_field :party_size %>
-
-  <%= f.label :time %>
-  <%= f.number_field :time %>
-
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2><%= @restaurant.name%></h2>
+    </div>
+    <ul class="col-sm-12">
+      <li>Location: <%= @restaurant.location%></li>
+      <li>Description: <%= @restaurant.description%></li>
+      <li>Cuisine: <%= @restaurant.cuisine%></li>
+    </ul>
+  </div>
+</div>

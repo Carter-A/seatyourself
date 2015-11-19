@@ -2,7 +2,8 @@
 <%= @user.email%>
 
 <% @user.reservations.each do |reservation|%>
-	<%= %><%= reservation.time %>
+	<p>---------------------------</p>
+	<%= reservation.time %>
 	<%= reservation.party_size %>
 	
 <% end %>

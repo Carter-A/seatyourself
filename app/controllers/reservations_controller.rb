@@ -9,10 +9,12 @@ class ReservationsController < ApplicationController
   def create
     @reservation = @restaurant.reservations.create(reservation_params)
     @reservation.user = current_user
-    if @reservation.save
-      redirect_to @restaurant, notice: 'Reservation Booked'
-    else
-      redirect_to restaurants_url()
+    if @restaurant.available?(@reservation.party_size, @reservation.time)
+      if @reservation.save
+        redirect_to @restaurant, notice: 'Reservation Booked'
+      else
+        redirect_to restaurants_url()
+      end
     end
   end
   def destroy

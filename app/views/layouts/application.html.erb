@@ -27,7 +27,10 @@
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
           <li><%= link_to "New Restaurant", '/restaurants/new' %></li>
-          <li><a href="#">Signed in as <%= current_user.name.capitalize %></a></li>
+          <li> <%= link_to "/users/#{current_user.id}" do %>
+            Signed in as <%= current_user.name.capitalize %>
+            <% end %>
+          </li>
           <li><%= link_to "Log out", session_path("current"), :method => :delete %></li>
         <% else %>
           <li><%= link_to "Sign Up", '/users/new' %></li>

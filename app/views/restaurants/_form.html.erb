@@ -1,15 +1,29 @@
-<%= form_for @restaurant do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<div class="row">
+  <div class="col-sm-12">
+    <h2>Create a Restaurant</h2>
+    <%= form_for @restaurant do |f| %>
 
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
 
-  <%= f.label :location %>
-  <%= f.text_field :location %>
+      <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_field :description, class: "form-control" %>
+      </div>
 
-  <%= f.label :cuisine %>
-  <%= f.text_field :cuisine %>
+      <div class="form-group">
+        <%= f.label :location %>
+        <%= f.text_field :location, class: "form-control" %>
+      </div>
 
-  <%= f.submit "Submit" %>
-<% end %>
+      <div class="form-group">
+        <%= f.label :cuisine %>
+        <%= f.text_field :cuisine, class: "form-control" %>
+      </div>
+
+      <%= f.submit "Create Account" %>
+    <% end %>
+  </div>
+</div>

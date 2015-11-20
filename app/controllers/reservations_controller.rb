@@ -1,5 +1,6 @@
 class ReservationsController < ApplicationController
   before_action :load_restaurant, only: [:create]
+  before_action :reservation_params, only: [:create]
 
   def show
     @reservation = Reservation.find(params[:id])

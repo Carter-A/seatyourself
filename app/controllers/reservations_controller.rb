@@ -14,6 +14,14 @@ class ReservationsController < ApplicationController
       redirect_to restaurants_url()
     end
   end
+  def destroy
+    @reservation = Reservation.find(params[:id])
+    @reservation.destroy
+    # redirect_to current_user_path
+  end
+  def update
+
+  end
 
   private
   def reservation_params

@@ -1,15 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <%= form_for ([@reservation.restaurant, @reservation])  do |f| %>
+        <h2><%= @reservation.restaurant.name %></h2>
+        <label for="date">Date:</label>
+        <input type="date" name="date" value="" class= "form-control">
 
-<div class="row">
-  <div class="col-sm-12">
-    <%= form_for ([@reservation.restaurant, @reservation])  do |f| %>
+        <%= f.label :party_size %>
+        <%= f.number_field :party_size, class: "form-control" %>
 
-      <label for="date">Date:</label>
-      <input type="date" name="date" value="" class= "form-control">
-
-      <%= f.label :party_size %>
-      <%= f.number_field :party_size, class: "form-control" %>
-
-      <%= f.submit "See Available Times", class: "btn btn-default" %>
-    <% end %>
+        <%= f.submit "Edit Reservation", class: "btn btn-default" %>
+      <% end %>
+    </div>
   </div>
 </div>

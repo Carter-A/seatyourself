@@ -2,17 +2,17 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <%= form_tag("/search", method: "get") do %>
+      <!-- <%= form_tag("/search", method: "get") do %>
         <%= label_tag(:q, "Search for:") %>
         <%= text_field_tag(:q) %>
         <%= submit_tag("Search") %>
-      <% end %>
+      <% end %> -->
     </div>
   </div>
   <div class="row">
       <% @restaurants.each do |restaurant| %>
         <%= link_to "/restaurants/#{restaurant.id}" do %>
-          <div class="col-sm-4">
+          <div class="col-sm-4 restaurant-container">
             <img class="restaurant-photo" src=<%= restaurant.photo_url %> alt="" />
             <h2 class="restaurant-title"><%= restaurant.name %></h2> <p class="restaurant-description" ><%= restaurant.description %></p>
           </div>

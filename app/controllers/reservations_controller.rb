@@ -20,11 +20,11 @@ class ReservationsController < ApplicationController
   def destroy
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
-    # redirect_to current_user_path
+    redirect_to :back
   end
   def edit
     @reservation = Reservation.find(params[:id])
-    
+
   end
   def update
     @reservation = Reservation.find(params[:id])
@@ -38,7 +38,7 @@ class ReservationsController < ApplicationController
 
   private
   def reservation_params
-    params.require(:reservation).permit(:time, :party_size)
+    params.require(:reservation).permit(:time, :party_size, :date)
   end
 
   def load_restaurant

@@ -4,13 +4,16 @@
     <% if current_user %>
       <%= form_for [@restaurant, @reservation] do |f| %>
 
-        <label for="date">Date:</label>
-        <input type="date" name="date" value="" class= "form-control">
+        <%= f.label :date %>
+        <%= f.date_field :date, class: "form-control" %>
+
+        <%= f.label :time %>
+        <%= f.time_field :time, class: "form-control" %>
 
         <%= f.label :party_size %>
         <%= f.number_field :party_size, class: "form-control" %>
 
-        <%= f.submit "See Available Times", class: "btn btn-default" %>
+        <%= f.submit "Create Reservation", class: "btn btn-default" %>
       <% end %>
       <% else %>
       <% end %>

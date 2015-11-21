@@ -1,9 +1,18 @@
-<%= @user.name%>
-<%= @user.email%>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<h2><%= @user.name%>'s Reservations</h2>
+		</div>
+	</div>
 
-<% @user.reservations.each do |reservation|%>
-	<p>---------------------------</p>
-	<%= reservation.time %>
-	<%= reservation.party_size %>
-	<%= link_to "edit", "/restaurants/#{reservation.restaurant_id}/reservations/#{reservation.id}/edit" %>
-<% end %>
+	<div class="row">
+		<% @user.reservations.each do |reservation|%>
+				<div class="col-sm-4">
+					<H5><%= reservation.restaurant.name %></H5>
+					<p><%= reservation.date %> at <%= reservation.time.to_s.split('')[10..15].join('') %> for <%= reservation.party_size %></p>
+					<%= link_to "Edit", "/restaurants/#{reservation.restaurant_id}/reservations/#{reservation.id}/edit", class: "btn btn-default" %>
+					<%= link_to "Delete", "/restaurants/#{reservation.restaurant_id}/reservations/#{reservation.id}", :method => :delete, class: "btn btn-default" %>
+				</div>
+		<% end %>
+	</div>
+</div>

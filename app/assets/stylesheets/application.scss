@@ -15,13 +15,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
+.restaurant-container {
+  height: 125px;
+  overflow: hidden;
+  margin: 5px 0;
+}
 .restaurant-photo {
   width: 100%;
   position: relative;
-  -webkit-filter: blur(1px) brightness(.7);
+  -webkit-filter: blur(.5px) brightness(.7);
 	filter: blur(1px) brightness(-1);
-  max-height: 115px;
+  bottom: 15px;
 }
 
 .restaurant-title, .restaurant-description {

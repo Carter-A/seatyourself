@@ -14,3 +14,21 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+.restaurant-photo {
+  width: 100%;
+  position: relative;
+  -webkit-filter: blur(1px) brightness(.7);
+	filter: blur(1px) brightness(-1);
+  max-height: 115px;
+}
+
+.restaurant-title, .restaurant-description {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+}

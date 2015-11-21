@@ -13,7 +13,8 @@
       <% @restaurants.each do |restaurant| %>
         <%= link_to "/restaurants/#{restaurant.id}" do %>
           <div class="col-sm-4">
-            <h2><%= restaurant.name %></h2> <p><%= restaurant.description %></p>
+            <img class="restaurant-photo" src=<%= restaurant.photo_url %> alt="" />
+            <h2 class="restaurant-title"><%= restaurant.name %></h2> <p class="restaurant-description" ><%= restaurant.description %></p>
           </div>
         <% end %>
       <% end %>

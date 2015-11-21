@@ -23,7 +23,12 @@
         <%= f.text_field :cuisine, class: "form-control" %>
       </div>
 
-      <%= f.submit "Create Account" %>
+      <div class="form-group">
+        <%= f.label :photo_url %>
+        <%= f.text_field :photo_url, class: "form-control" %>
+      </div>
+
+      <%= f.submit "Create Restaurant", class: "btn btn-default" %>
     <% end %>
   </div>
 </div>

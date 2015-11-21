@@ -5,5 +5,5 @@
 	<p>---------------------------</p>
 	<%= reservation.time %>
 	<%= reservation.party_size %>
-	
+	<%= link_to "edit", "/restaurants/#{reservation.restaurant_id}/reservations/#{reservation.id}/edit" %>
 <% end %>

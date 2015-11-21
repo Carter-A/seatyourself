@@ -24,12 +24,13 @@ class ReservationsController < ApplicationController
   end
   def edit
     @reservation = Reservation.find(params[:id])
+    
   end
   def update
     @reservation = Reservation.find(params[:id])
 
     # if @reservation.update_attributes(picture_params)
-    #   redirect_to 
+    #   redirect_to
     # else
     #   render :edit
     # end

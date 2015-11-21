@@ -1,6 +1,15 @@
 
 <div class="container">
   <div class="row">
+    <div class="col-sm-12">
+      <%= form_tag("/search", method: "get") do %>
+        <%= label_tag(:q, "Search for:") %>
+        <%= text_field_tag(:q) %>
+        <%= submit_tag("Search") %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
       <% @restaurants.each do |restaurant| %>
         <%= link_to "/restaurants/#{restaurant.id}" do %>
           <div class="col-sm-4">

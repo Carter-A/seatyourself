@@ -1,6 +1,5 @@
 <div class="row">
   <div class="col-sm-12">
-    <h2><%= @restaurant.name%></h2>
     <% if current_user %>
       <%= form_for [@restaurant, @reservation] do |f| %>
 
@@ -8,7 +7,7 @@
         <%= f.date_field :date, class: "form-control" %>
 
         <%= f.label :time %>
-        <%= f.time_field :time, class: "form-control" %>
+        <%= f.time_field :time, class: "form-control", value: "11:00:00", step: "3600", min: "11:00", max: "20:00" %>
 
         <%= f.label :party_size %>
         <%= f.number_field :party_size, class: "form-control" %>

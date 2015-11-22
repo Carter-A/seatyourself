@@ -1,18 +1,16 @@
 <div class="container">
-
-<%= render 'reservation_form' %>
-
-
-
-
+  <div class="page-header">
+    <h2><%= @restaurant.name%></h2>
+    <p><%= @restaurant.description%></p>
+  </div>
   <div class="row">
     <div class="col-sm-12">
-
+      <ul class="list-group">
+        <li class="list-group-item">Located in <%= @restaurant.location%></li>
+        <li class="list-group-item">Cuisine: <%= @restaurant.cuisine%></li>
+      </ul>
     </div>
-    <ul class="col-sm-12">
-      <li>Location: <%= @restaurant.location%></li>
-      <li>Description: <%= @restaurant.description%></li>
-      <li>Cuisine: <%= @restaurant.cuisine%></li>
-    </ul>
   </div>
+
+  <%= render 'reservation_form' %>
 </div>

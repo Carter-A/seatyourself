@@ -26,12 +26,11 @@ class ReservationsController < ApplicationController
   end
   def update
     @reservation = Reservation.find(params[:id])
-
-    # if @reservation.update_attributes(picture_params)
-    #   redirect_to
-    # else
-    #   render :edit
-    # end
+    if @reservation.update_attributes(reservation_params)
+      redirect_to current_user, notice: 'Reservation Updated'
+    else
+      render :edit
+    end
   end
 
   private

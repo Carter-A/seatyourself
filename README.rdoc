@@ -1,3 +1,11 @@
 Clone of OpenTable
 
 Written using Ruby on Rails
+
+Bootstrap front end
+
+To set up and run:
+- bundle install
+- rake db:setup
+- rails s
+- visit localhost:3000

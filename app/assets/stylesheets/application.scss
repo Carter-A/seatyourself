@@ -36,6 +36,16 @@ body {
 
 // content
 
+#q_name_or_cuisine_or_location_cont {
+  display: inline;
+  width: 20%;
+  margin: 0 0 0 15px;
+}
+
+#restaurant_search > input.btn.btn-default {
+  display: inline;
+}
+
 .list-group-item {
   color: #777;
 }

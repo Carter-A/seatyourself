@@ -12,7 +12,7 @@ class ReservationsController < ApplicationController
     if @reservation.save
       redirect_to @restaurant, notice: 'Reservation Booked'
     else
-      redirect_to @restaurant, notice: 'Over booked'
+      redirect_to @restaurant, alert: "Restaurant OverBooked"
     end
   end
   def destroy

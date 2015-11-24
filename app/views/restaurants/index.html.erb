@@ -1,13 +1,11 @@
-
 <div class="container">
   <div class="row">
-    <div class="col-sm-12">
-      <!-- <%= form_tag("/search", method: "get") do %>
-        <%= label_tag(:q, "Search for:") %>
-        <%= text_field_tag(:q) %>
-        <%= submit_tag("Search") %>
-      <% end %> -->
-    </div>
+    <%= search_form_for @q do |f| %>
+
+      <%= f.search_field :name_or_cuisine_or_location_cont,  class: "form-control" %>
+
+      <%= f.submit "Search", class: "btn btn-default" %>
+    <% end %>
   </div>
   <div class="row">
       <% @restaurants.each do |restaurant| %>

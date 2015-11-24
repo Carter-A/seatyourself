@@ -1,11 +1,14 @@
 <div class="container">
   <div class="row">
-    <%= search_form_for @q do |f| %>
+    <div class="col-sm-4">
+      <%= search_form_for @q do |f| %>
 
-      <%= f.search_field :name_or_cuisine_or_location_cont,  class: "form-control" %>
+        <%= f.search_field :name_or_cuisine_or_location_cont,  class: "form-control" %>
 
-      <%= f.submit "Search", class: "btn btn-default" %>
-    <% end %>
+        <%= f.submit "Search", class: "btn btn-default" %>
+      <% end %>
+    </div>
+
   </div>
   <div class="row">
       <% @restaurants.each do |restaurant| %>

@@ -44,12 +44,15 @@ body {
   color: $primary-color;
   background-color: $secondary-color;
   border-color: $primary-color;
+
 }
 .btn-default {
   display: block;
   background-color: $primary-color;
   border-color: $secondary-color;
-  color: white;
+  color: $secondary-color;
+  -webkit-transition: color .2s, border-color .2s, background-color .2s, -webkit-transform .2s;
+    transition: color .2s, border-color .2s, background-color .2s, transform .2s;
 }
 
 .list-group-item {

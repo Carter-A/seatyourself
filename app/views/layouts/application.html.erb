@@ -22,7 +22,6 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
-          <li><%= link_to "New Restaurant", '/restaurants/new' %></li>
           <li> <%= link_to "/users/#{current_user.id}" do %>
             Signed in as <%= current_user.name.capitalize %>
             <% end %>

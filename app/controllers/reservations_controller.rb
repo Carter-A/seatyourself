@@ -1,9 +1,8 @@
 class ReservationsController < ApplicationController
   before_action :load_restaurant, only: [:create]
-  before_action :reservation_params, only: [:create]
-
+  before_action :load_reservation, only: [:show, :destroy, :edit, :update]
   def show
-    @reservation = Reservation.find(params[:id])
+    load_reservation
   end
 
   def create
@@ -16,16 +15,15 @@ class ReservationsController < ApplicationController
     end
   end
   def destroy
-    @reservation = Reservation.find(params[:id])
+    load_reservation
     @reservation.destroy
     redirect_to :back
   end
   def edit
-    @reservation = Reservation.find(params[:id])
-
+    load_reservation
   end
   def update
-    @reservation = Reservation.find(params[:id])
+    load_reservation
     if @reservation.update_attributes(reservation_params)
       redirect_to current_user, notice: 'Reservation Updated'
     else
@@ -40,5 +38,9 @@ class ReservationsController < ApplicationController
 
   def load_restaurant
     @restaurant = Restaurant.find(params[:restaurant_id])
+  end
+
+  def load_reservation
+    @reservation = Reservation.find(params[:id])
   end
 end
